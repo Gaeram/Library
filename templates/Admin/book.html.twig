@@ -1,0 +1,18 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}
+    <title>{{ book.title }}</title>
+{% endblock %}
+
+{% block main %}
+    <article>
+        <h2>{{ book.title }}</h2>
+        <h2>Nombre de pages : {{ book.nbPages }}</h2>
+        <p> Ecrit par : {{ book.author }}</p>
+        <p> Publié le :{{ book.publishedAt|date("m/d/y") }}</p>
+    </article>
+{% endblock %}
+
+{% block footer %}
+    <p>Footer de la liste des livres</p>
+{% endblock %}

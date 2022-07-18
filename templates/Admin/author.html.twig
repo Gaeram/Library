@@ -1,0 +1,17 @@
+{% include 'base.html.twig' %}
+
+{% block title %}
+    <title>Auteurs</title>
+{% endblock %}
+
+{% block main %}
+
+        <article>
+            <h1>{{ author.firstName }}</h1>
+            <p>Né le :{{ author.birthDate|date("m/d/y") }}</p>
+            {% if author.deathDate %}
+                <p>Décédé le : :{{ author.deathDate|date("m/d/y") }}</p>
+            {% endif  %}
+        </article>
+
+{% endblock %}

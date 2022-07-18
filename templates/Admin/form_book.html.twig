@@ -1,0 +1,37 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}
+    <title>Ajouter un livre</title>
+{% endblock %}
+
+{% block main %}
+    {{ form_start(form) }}
+        <div class="form-group">
+            {{ form_label(form.title, 'Titre', {'label_attr': {'class': 'form-article-title-label'}}) }}
+            {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.title) }}
+        </div>
+        <div class="form-group">
+            {{ form_label(form.nbPages, 'Pages', {'label_attr': {'class': 'form-article-pages-label'}}) }}
+            {{ form_widget(form.nbPages, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.nbPages) }}
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.publishedAt, 'Publié', {'label_attr': {'class': 'form-article-publishedat-label'}}) }}
+            {{ form_widget(form.publishedAt, {'attr': {'class': 'form-control'}}) }}
+        </div>
+
+        <div class="form-group">
+            {{ form_label(form.author,'Auteur', {'label_attr': {'class': 'form-article-author-label'}}) }}
+            {{ form_widget(form.author, {'attr': {'class': 'form-control'}}) }}
+            {{ form_errors(form.author) }}
+        </div>
+
+        {{ form_widget(form.submit) }}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block footer %}
+    <p>Footer de la page d'ajout de livre</p>
+{% endblock %}

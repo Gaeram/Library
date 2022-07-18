@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    height: 7vh;
+    background-color: black;
+}
+
+header > nav > ul > li > a
+{
+    text-decoration: none;
+    color: white;
+    font-family: "Arial";
+}

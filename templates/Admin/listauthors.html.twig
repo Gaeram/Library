@@ -1,0 +1,23 @@
+{% include 'base.html.twig' %}
+
+{% block title %}
+    <title>Auteurs</title>
+{% endblock %}
+
+{% block main %}
+    <a class="bouton" href="{{ path('admin-insert-author') }}">Ajouter un auteur</a>
+    {% for author in authors %}
+        <article>
+            <h1>{{ author.firstName }}</h1>
+            <a href="{{ path('admin-author', {'id': author.id}) }}">En savoir +</a>
+            <a href="{{ path('admin-author-delete', {'id': author.id}) }}">Supprimer</a>
+            <a href="{{ path('admin-author-update', {'id': author.id}) }}">Modifier</a>
+        </article>
+
+
+    {% endfor %}
+{% endblock %}
+
+{% block footer %}
+    <p>Footer Page des auteurs</p>
+{% endblock %}

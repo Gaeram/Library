@@ -1,0 +1,23 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}
+    <title>Livres</title>
+{% endblock %}
+
+{% block main %}
+    <a class="bouton" href="{{ path('admin-insert-book') }}">Ajouter un livre</a>
+    {% for books in books %}
+        <article>
+            <h1>{{ book.title }}</h1>
+            <p>{{ book.author }}</p>
+            <a href="{{ path('admin-book', {'id': book.id}) }}">En savoir +</a>
+            <a href="{{ path('admin-book-delete', {'id': book.id}) }}">Supprimer</a>
+            <a href="{{ path('admin-book-update', {'id': book.id}) }}">Modifier</a>
+        </article>
+    {% endfor %}
+
+{% endblock %}
+
+{% block footer %}
+    <p>Footer de la liste des livres</p>
+{% endblock %}
